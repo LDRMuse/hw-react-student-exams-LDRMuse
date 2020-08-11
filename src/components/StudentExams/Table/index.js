@@ -39,7 +39,7 @@ export const Table = ({ students }) => {
       <tfoot>
         <tr>
           <td>Average:</td>
-          <td>{getAverage()}</td>
+          <td>{getAverage() || 0}</td>
         </tr>
       </tfoot>
     </table>
