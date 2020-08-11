@@ -7,7 +7,7 @@ export const Form = ({ handler }) => {
 
 
   return (
-    <form onClick={handler}>
+    <form onSubmit={handler}>
 
       <label htmlFor="fname" > </label>
       <input type="text" id="fname" name="fname" placeholder="First Name" />

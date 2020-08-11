@@ -17,5 +17,5 @@ export const TStudent = ({firstName, lastName, score}) => {
 TStudent.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
-  score: PropTypes.number,
+  score: PropTypes.string,
 }
