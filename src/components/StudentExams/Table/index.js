@@ -6,7 +6,15 @@ import { TStudent } from './TStudent'
 
 export const Table = ({ students }) => {
 
-  const renderStudents = () => students.map(({firstName, lastName, score}, i) => {
+  const getAverage = () => {
+    return students.reduce((total, {score}) => {
+      total += score * 1
+
+      return total
+    }, 0) / students.length
+  }
+
+  const renderStudents = () => students.map(({ firstName, lastName, score }, i) => {
     return (
       <TStudent firstName={firstName} lastName={lastName} score={score} key={i} />
     )
@@ -30,7 +38,8 @@ export const Table = ({ students }) => {
       </tbody>
       <tfoot>
         <tr>
-          <td>Average</td>
+          <td>Average:</td>
+          <td>{getAverage()}</td>
         </tr>
       </tfoot>
     </table>
