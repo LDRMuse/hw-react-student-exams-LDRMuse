@@ -1,10 +1,10 @@
-import React, { setState } from 'react'
+import React, { useState } from 'react'
 import { Table } from './Table'
 import { Form } from './Form'
 
 export const StudentExams = () => {
 
-const [students, setStudents] = setState([])
+const [students, setStudents] = useState([])
 
 
 
