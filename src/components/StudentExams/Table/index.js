@@ -2,16 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { TStudent } from './TStudent'
 
+import './Table.css'
+
 
 
 export const Table = ({ students }) => {
 
   const getAverage = () => {
-    return students.reduce((total, {score}) => {
+    return (students.reduce((total, {score}) => {
       total += score * 1
 
       return total
-    }, 0) / students.length
+    }, 0) / students.length).toFixed(2)
   }
 
   const renderStudents = () => students.map(({ firstName, lastName, score }, i) => {
@@ -38,8 +40,8 @@ export const Table = ({ students }) => {
       </tbody>
       <tfoot>
         <tr>
-          <td>Average:</td>
-          <td>{getAverage() || 0}</td>
+          <td >Average:</td>
+          <td className={getAverage() >= 70 ? 'good' : 'bad'}> {getAverage() || 0}</td>
         </tr>
       </tfoot>
     </table>
