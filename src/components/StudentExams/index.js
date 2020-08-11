@@ -12,7 +12,7 @@ const handleAddStudent = (e) => {
   e.preventDefault()
 
   const newStudent = {
-    student: e.target.elements[0].value,
+    student: e.target.value,
   }
   setStudents(() => students.concat(newStudent))
 }
