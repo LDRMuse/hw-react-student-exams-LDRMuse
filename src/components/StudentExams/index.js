@@ -1,16 +1,10 @@
-import React, {setState} from 'react'
+import React, { setState } from 'react'
 import { Table } from './Table'
 import { Form } from './Form'
 
 export const StudentExams = () => {
-const [student, setStudent] = setState([{
-  'firstName': '',
-  'lastName': '',
-  'score': 0,
-}])
 
-
-
+const [students, setStudents] = setState([])
 
 
 
@@ -20,13 +14,13 @@ const handleAddStudent = (e) => {
   const newStudent = {
     student: e.target.elements[0].value,
   }
-  setStudent(() => student.concat(newStudent))
+  setStudents(() => students.concat(newStudent))
 }
 
   return (
     <main>
       <h1>Student Exams</h1>
-      <Table student={student}/>
+      <Table students={students}/>
       <Form handler={handleAddStudent}/>
     </main>
   )
